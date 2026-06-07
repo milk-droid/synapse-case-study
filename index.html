@@ -11,14 +11,14 @@
     --surface: #111111;
     --border: #1a1a1a;
     --border-hover: #222222;
-    --primary: #6366F1;
-    --primary-light: #818CF8;
-    --primary-dark: #4F46E5;
+    --primary: #94A3B8;
+    --primary-light: #CBD5E1;
+    --primary-dark: #64748B;
     --text: #e0e0e0;
     --text-dim: #666666;
     --text-muted: #444444;
-    --indigo-glow: rgba(99, 102, 241, 0.35);
-    --indigo-glow-subtle: rgba(99, 102, 241, 0.15);
+    --silver-glow: rgba(148, 163, 184, 0.3);
+    --silver-glow-subtle: rgba(148, 163, 184, 0.15);
     --red: #EF4444;
     --amber: #F59E0B;
     --green: #22C55E;
@@ -101,7 +101,7 @@ body {
 
 .nav-dot.active {
     background-color: var(--primary);
-    box-shadow: 0 0 8px var(--indigo-glow);
+    box-shadow: 0 0 8px var(--silver-glow);
     transform: scale(1.3);
 }
 
@@ -148,7 +148,7 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    background: var(--bg);
+    background: #0f1115;
     overflow: hidden;
     padding: 5% 0;
 }
@@ -165,8 +165,8 @@ body {
         0deg,
         transparent,
         transparent 2px,
-        rgba(99, 102, 241, 0.015) 2px,
-        rgba(99, 102, 241, 0.015) 4px
+        rgba(148, 163, 184, 0.015) 2px,
+        rgba(148, 163, 184, 0.015) 4px
     );
     pointer-events: none;
     z-index: 1;
@@ -180,7 +180,7 @@ body {
     right: -10%;
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(148, 163, 184, 0.08) 0%, transparent 70%);
     border-radius: 50%;
     z-index: 0;
     animation: float 10s ease-in-out infinite;
@@ -317,7 +317,7 @@ body {
 
 .project-info-bar:hover {
     border-color: var(--primary);
-    box-shadow: 0 0 20px var(--indigo-glow-subtle);
+    box-shadow: 0 0 20px var(--silver-glow-subtle);
 }
 
 .project-meta {
@@ -371,7 +371,7 @@ body {
 .skill-tag:hover {
     border-color: var(--primary);
     color: var(--primary-light);
-    box-shadow: 0 0 10px var(--indigo-glow-subtle);
+    box-shadow: 0 0 10px var(--silver-glow-subtle);
 }
 
 @media (max-width: 768px) {
@@ -554,7 +554,7 @@ section.alt {
 
 .finding-card:hover {
     border-color: var(--primary);
-    box-shadow: 0 0 20px var(--indigo-glow-subtle);
+    box-shadow: 0 0 20px var(--silver-glow-subtle);
 }
 
 .finding-card h3 {
@@ -608,7 +608,7 @@ section.alt {
 
 .feature-card:hover {
     border-color: var(--primary);
-    box-shadow: 0 0 20px var(--indigo-glow-subtle);
+    box-shadow: 0 0 20px var(--silver-glow-subtle);
 }
 
 .feature-card h3 {
@@ -732,7 +732,7 @@ section.alt {
 }
 
 .temp-row:hover {
-    background: rgba(99, 102, 241, 0.05);
+    background: rgba(148, 163, 184, 0.05);
     border-left-color: var(--primary);
 }
 
@@ -800,7 +800,7 @@ section.alt {
 
 .deliverable-card:hover {
     border-color: var(--primary);
-    box-shadow: 0 0 20px var(--indigo-glow-subtle);
+    box-shadow: 0 0 20px var(--silver-glow-subtle);
 }
 
 .deliverable-card h3 {
@@ -913,7 +913,7 @@ section.alt {
 
 .ownership-list li:hover {
     border-color: var(--primary);
-    box-shadow: 0 0 12px var(--indigo-glow-subtle);
+    box-shadow: 0 0 12px var(--silver-glow-subtle);
 }
 
 .ownership-list li::before {
@@ -956,6 +956,84 @@ section.alt {
     }
 }
 
+/* ASCII Art Section */
+.ascii-block {
+    background: var(--surface);
+    border-radius: 3px;
+    padding: 32px;
+    margin: 40px 0;
+    border: 1px solid var(--border);
+    overflow-x: auto;
+}
+
+.ascii-block pre {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: var(--text-dim);
+    white-space: pre;
+    margin: 0;
+}
+
+.ascii-block .ascii-key {
+    color: var(--primary-light);
+}
+
+.ascii-block .ascii-heading {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+@media (max-width: 576px) {
+    .ascii-block {
+        padding: 16px;
+    }
+    .ascii-block pre {
+        font-size: 0.65rem;
+    }
+}
+
+/* Wireframe Section */
+.wireframe-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+
+.wireframe-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.wireframe-label {
+    font-size: 0.8rem;
+    color: var(--primary-light);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .wireframe-row {
+        gap: 24px;
+    }
+    .wireframe-item svg {
+        width: 140px;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .wireframe-row {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 /* Footer */
 footer {
     background: var(--surface);
@@ -991,7 +1069,9 @@ footer p {
         <div class="nav-dot active" data-tooltip="Hero" data-section="hero" role="button" tabindex="0" aria-label="Navigate to Hero section"></div>
         <div class="nav-dot" data-tooltip="The Setup" data-section="setup" role="button" tabindex="0" aria-label="Navigate to Setup section"></div>
         <div class="nav-dot" data-tooltip="The Bet" data-section="bet" role="button" tabindex="0" aria-label="Navigate to Bet section"></div>
+        <div class="nav-dot" data-tooltip="IA Map" data-section="ia-map" role="button" tabindex="0" aria-label="Navigate to IA Map section"></div>
         <div class="nav-dot" data-tooltip="Surfaces" data-section="surfaces" role="button" tabindex="0" aria-label="Navigate to Surfaces section"></div>
+        <div class="nav-dot" data-tooltip="Wireframes" data-section="wireframes" role="button" tabindex="0" aria-label="Navigate to Wireframes section"></div>
         <div class="nav-dot" data-tooltip="AI Process" data-section="ai-process" role="button" tabindex="0" aria-label="Navigate to AI Process section"></div>
         <div class="nav-dot" data-tooltip="Deliverables" data-section="deliverables" role="button" tabindex="0" aria-label="Navigate to Deliverables section"></div>
         <div class="nav-dot" data-tooltip="Prototype" data-section="prototype" role="button" tabindex="0" aria-label="Navigate to Prototype section"></div>
@@ -1060,8 +1140,42 @@ footer p {
             </div>
         </section>
 
+        <!-- IA Map (ASCII Art) -->
+        <section id="ia-map">
+            <div class="container">
+                <h2 class="section-heading animate-in">Information Architecture</h2>
+                <div class="ascii-block animate-in">
+                    <pre>
+  <span class="ascii-heading">SYNAPSE IA</span>
+  ====================
+
+  <span class="ascii-key">TOPICS</span> (26)
+  |
+  +-- <span class="ascii-key">Neuroscience</span>
+  |   +-- Cognitive
+  |   +-- Computational
+  |   +-- Clinical
+  |
+  +-- <span class="ascii-key">Climate Science</span>
+  |   +-- Atmospheric
+  |   +-- Oceanography
+  |   +-- Modeling
+  |
+  +-- <span class="ascii-key">AI &amp; Machine Learning</span>
+      +-- NLP
+      +-- Computer Vision
+      +-- Reinforcement Learning
+
+  <span class="ascii-heading">SURFACES</span>
+  +---------+---------+---------+---------+
+  |  <span class="ascii-key">Feed</span>   | <span class="ascii-key">Topics</span>  |  <span class="ascii-key">Labs</span>   |  <span class="ascii-key">Saves</span>  |
+  +---------+---------+---------+---------+</pre>
+                </div>
+            </div>
+        </section>
+
         <!-- The Surfaces -->
-        <section id="surfaces">
+        <section class="alt" id="surfaces">
             <div class="container">
                 <h2 class="section-heading animate-in">The Surfaces</h2>
                 <div class="feature-grid animate-in">
@@ -1090,6 +1204,161 @@ footer p {
                         <h3>Paper Detail</h3>
                         <p>Read, save, reference, and share - the full interaction layer for each paper.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wireframes -->
+        <section id="wireframes">
+            <div class="container">
+                <h2 class="section-heading animate-in">Mobile Wireframes</h2>
+                <div class="wireframe-row animate-in">
+
+                    <!-- Phone 1: Feed -->
+                    <div class="wireframe-item">
+                        <svg width="180" height="320" viewBox="0 0 180 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Phone outline -->
+                            <rect x="1" y="1" width="178" height="318" rx="16" stroke="#94A3B8" stroke-width="2" fill="#0a0a0a"/>
+                            <!-- Notch -->
+                            <rect x="60" y="4" width="60" height="6" rx="3" fill="#1a1a1a"/>
+                            <!-- Status bar -->
+                            <rect x="12" y="18" width="156" height="24" rx="4" fill="#1a1a1a"/>
+                            <!-- Search bar -->
+                            <rect x="12" y="50" width="156" height="28" rx="6" fill="#1a1a1a" stroke="#64748B" stroke-width="1"/>
+                            <rect x="20" y="60" width="60" height="8" rx="2" fill="#333"/>
+                            <!-- Card 1 -->
+                            <rect x="12" y="90" width="156" height="60" rx="4" fill="#1a1a1a"/>
+                            <rect x="20" y="98" width="90" height="8" rx="2" fill="#64748B"/>
+                            <rect x="20" y="112" width="130" height="6" rx="2" fill="#333"/>
+                            <rect x="20" y="124" width="110" height="6" rx="2" fill="#333"/>
+                            <rect x="20" y="136" width="60" height="6" rx="2" fill="#222"/>
+                            <!-- Card 2 -->
+                            <rect x="12" y="158" width="156" height="60" rx="4" fill="#1a1a1a"/>
+                            <rect x="20" y="166" width="80" height="8" rx="2" fill="#64748B"/>
+                            <rect x="20" y="180" width="130" height="6" rx="2" fill="#333"/>
+                            <rect x="20" y="192" width="120" height="6" rx="2" fill="#333"/>
+                            <rect x="20" y="204" width="50" height="6" rx="2" fill="#222"/>
+                            <!-- Card 3 -->
+                            <rect x="12" y="226" width="156" height="60" rx="4" fill="#1a1a1a"/>
+                            <rect x="20" y="234" width="100" height="8" rx="2" fill="#64748B"/>
+                            <rect x="20" y="248" width="130" height="6" rx="2" fill="#333"/>
+                            <rect x="20" y="260" width="105" height="6" rx="2" fill="#333"/>
+                            <rect x="20" y="272" width="70" height="6" rx="2" fill="#222"/>
+                            <!-- Bottom nav -->
+                            <rect x="12" y="296" width="156" height="16" rx="4" fill="#1a1a1a"/>
+                            <rect x="28" y="300" width="20" height="8" rx="2" fill="#94A3B8"/>
+                            <rect x="62" y="300" width="20" height="8" rx="2" fill="#333"/>
+                            <rect x="96" y="300" width="20" height="8" rx="2" fill="#333"/>
+                            <rect x="130" y="300" width="20" height="8" rx="2" fill="#333"/>
+                        </svg>
+                        <span class="wireframe-label">Feed</span>
+                    </div>
+
+                    <!-- Phone 2: Topics -->
+                    <div class="wireframe-item">
+                        <svg width="180" height="320" viewBox="0 0 180 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Phone outline -->
+                            <rect x="1" y="1" width="178" height="318" rx="16" stroke="#94A3B8" stroke-width="2" fill="#0a0a0a"/>
+                            <!-- Notch -->
+                            <rect x="60" y="4" width="60" height="6" rx="3" fill="#1a1a1a"/>
+                            <!-- Header bar -->
+                            <rect x="12" y="18" width="156" height="24" rx="4" fill="#1a1a1a"/>
+                            <rect x="20" y="26" width="50" height="8" rx="2" fill="#94A3B8"/>
+                            <!-- Topic tiles: 2x3 grid -->
+                            <!-- Row 1 -->
+                            <rect x="12" y="54" width="74" height="64" rx="6" fill="#1a1a1a" stroke="#64748B" stroke-width="0.5" opacity="0.9"/>
+                            <rect x="20" y="62" width="40" height="6" rx="2" fill="#94A3B8"/>
+                            <rect x="20" y="74" width="56" height="5" rx="2" fill="#333"/>
+                            <rect x="20" y="84" width="48" height="5" rx="2" fill="#333"/>
+                            <rect x="20" y="100" width="24" height="10" rx="2" fill="#64748B" opacity="0.4"/>
+
+                            <rect x="94" y="54" width="74" height="64" rx="6" fill="#1a1a1a" stroke="#64748B" stroke-width="0.5" opacity="0.7"/>
+                            <rect x="102" y="62" width="36" height="6" rx="2" fill="#94A3B8"/>
+                            <rect x="102" y="74" width="56" height="5" rx="2" fill="#333"/>
+                            <rect x="102" y="84" width="44" height="5" rx="2" fill="#333"/>
+                            <rect x="102" y="100" width="24" height="10" rx="2" fill="#64748B" opacity="0.4"/>
+
+                            <!-- Row 2 -->
+                            <rect x="12" y="126" width="74" height="64" rx="6" fill="#1a1a1a" stroke="#64748B" stroke-width="0.5" opacity="0.6"/>
+                            <rect x="20" y="134" width="44" height="6" rx="2" fill="#94A3B8"/>
+                            <rect x="20" y="146" width="56" height="5" rx="2" fill="#333"/>
+                            <rect x="20" y="156" width="50" height="5" rx="2" fill="#333"/>
+                            <rect x="20" y="172" width="24" height="10" rx="2" fill="#64748B" opacity="0.4"/>
+
+                            <rect x="94" y="126" width="74" height="64" rx="6" fill="#1a1a1a" stroke="#64748B" stroke-width="0.5" opacity="0.8"/>
+                            <rect x="102" y="134" width="48" height="6" rx="2" fill="#94A3B8"/>
+                            <rect x="102" y="146" width="56" height="5" rx="2" fill="#333"/>
+                            <rect x="102" y="156" width="40" height="5" rx="2" fill="#333"/>
+                            <rect x="102" y="172" width="24" height="10" rx="2" fill="#64748B" opacity="0.4"/>
+
+                            <!-- Row 3 -->
+                            <rect x="12" y="198" width="74" height="64" rx="6" fill="#1a1a1a" stroke="#64748B" stroke-width="0.5" opacity="0.5"/>
+                            <rect x="20" y="206" width="38" height="6" rx="2" fill="#94A3B8"/>
+                            <rect x="20" y="218" width="56" height="5" rx="2" fill="#333"/>
+                            <rect x="20" y="228" width="46" height="5" rx="2" fill="#333"/>
+                            <rect x="20" y="244" width="24" height="10" rx="2" fill="#64748B" opacity="0.4"/>
+
+                            <rect x="94" y="198" width="74" height="64" rx="6" fill="#1a1a1a" stroke="#64748B" stroke-width="0.5" opacity="0.4"/>
+                            <rect x="102" y="206" width="42" height="6" rx="2" fill="#94A3B8"/>
+                            <rect x="102" y="218" width="56" height="5" rx="2" fill="#333"/>
+                            <rect x="102" y="228" width="52" height="5" rx="2" fill="#333"/>
+                            <rect x="102" y="244" width="24" height="10" rx="2" fill="#64748B" opacity="0.4"/>
+
+                            <!-- Bottom nav -->
+                            <rect x="12" y="296" width="156" height="16" rx="4" fill="#1a1a1a"/>
+                            <rect x="28" y="300" width="20" height="8" rx="2" fill="#333"/>
+                            <rect x="62" y="300" width="20" height="8" rx="2" fill="#94A3B8"/>
+                            <rect x="96" y="300" width="20" height="8" rx="2" fill="#333"/>
+                            <rect x="130" y="300" width="20" height="8" rx="2" fill="#333"/>
+                        </svg>
+                        <span class="wireframe-label">Topics</span>
+                    </div>
+
+                    <!-- Phone 3: Profile -->
+                    <div class="wireframe-item">
+                        <svg width="180" height="320" viewBox="0 0 180 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Phone outline -->
+                            <rect x="1" y="1" width="178" height="318" rx="16" stroke="#94A3B8" stroke-width="2" fill="#0a0a0a"/>
+                            <!-- Notch -->
+                            <rect x="60" y="4" width="60" height="6" rx="3" fill="#1a1a1a"/>
+                            <!-- Header bar -->
+                            <rect x="12" y="18" width="156" height="24" rx="4" fill="#1a1a1a"/>
+                            <rect x="20" y="26" width="40" height="8" rx="2" fill="#94A3B8"/>
+                            <!-- Avatar circle -->
+                            <circle cx="90" cy="80" r="28" fill="#1a1a1a" stroke="#64748B" stroke-width="1.5"/>
+                            <circle cx="90" cy="74" r="10" fill="#64748B" opacity="0.5"/>
+                            <ellipse cx="90" cy="92" rx="14" ry="8" fill="#64748B" opacity="0.3"/>
+                            <!-- Name bar -->
+                            <rect x="50" y="118" width="80" height="10" rx="3" fill="#94A3B8"/>
+                            <!-- Subtitle -->
+                            <rect x="40" y="136" width="100" height="6" rx="2" fill="#333"/>
+                            <!-- Stats row -->
+                            <rect x="20" y="156" width="44" height="24" rx="4" fill="#1a1a1a"/>
+                            <rect x="68" y="156" width="44" height="24" rx="4" fill="#1a1a1a"/>
+                            <rect x="116" y="156" width="44" height="24" rx="4" fill="#1a1a1a"/>
+                            <rect x="28" y="164" width="28" height="6" rx="2" fill="#64748B" opacity="0.5"/>
+                            <rect x="76" y="164" width="28" height="6" rx="2" fill="#64748B" opacity="0.5"/>
+                            <rect x="124" y="164" width="28" height="6" rx="2" fill="#64748B" opacity="0.5"/>
+                            <!-- Content row 1 -->
+                            <rect x="12" y="196" width="156" height="52" rx="4" fill="#1a1a1a"/>
+                            <rect x="20" y="204" width="80" height="8" rx="2" fill="#64748B"/>
+                            <rect x="20" y="218" width="130" height="6" rx="2" fill="#333"/>
+                            <rect x="20" y="230" width="100" height="6" rx="2" fill="#333"/>
+                            <!-- Content row 2 -->
+                            <rect x="12" y="256" width="156" height="52" rx="4" fill="#1a1a1a"/>
+                            <rect x="20" y="264" width="70" height="8" rx="2" fill="#64748B"/>
+                            <rect x="20" y="278" width="130" height="6" rx="2" fill="#333"/>
+                            <rect x="20" y="290" width="90" height="6" rx="2" fill="#333"/>
+                            <!-- Bottom nav -->
+                            <rect x="12" y="296" width="156" height="16" rx="4" fill="#1a1a1a"/>
+                            <rect x="28" y="300" width="20" height="8" rx="2" fill="#333"/>
+                            <rect x="62" y="300" width="20" height="8" rx="2" fill="#333"/>
+                            <rect x="96" y="300" width="20" height="8" rx="2" fill="#333"/>
+                            <rect x="130" y="300" width="20" height="8" rx="2" fill="#94A3B8"/>
+                        </svg>
+                        <span class="wireframe-label">Profile</span>
+                    </div>
+
                 </div>
             </div>
         </section>
