@@ -997,7 +997,7 @@ section.alt {
 .wireframe-row {
     display: flex;
     justify-content: center;
-    gap: 32px;
+    gap: 24px;
     flex-wrap: wrap;
     margin: 32px 0;
 }
@@ -1007,30 +1007,45 @@ section.alt {
     flex-direction: column;
     align-items: center;
     gap: 12px;
+    flex: 0 0 auto;
 }
 
 .wireframe-label {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--primary-light);
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 500;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .wireframe-row {
-        gap: 24px;
+        gap: 20px;
     }
     .wireframe-item svg {
-        width: 140px;
+        width: 150px;
+        height: auto;
+    }
+}
+
+@media (max-width: 680px) {
+    .wireframe-row {
+        justify-content: center;
+        gap: 16px;
+    }
+    .wireframe-item svg {
+        width: 130px;
         height: auto;
     }
 }
 
 @media (max-width: 480px) {
-    .wireframe-row {
-        flex-direction: column;
-        align-items: center;
+    .wireframe-item svg {
+        width: 120px;
+        height: auto;
+    }
+    .wireframe-label {
+        font-size: 0.65rem;
     }
 }
 
@@ -1212,39 +1227,42 @@ footer p {
                     <!-- Phone 1: Feed -->
                     <div class="wireframe-item">
                         <svg width="180" height="320" viewBox="0 0 180 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Phone outline -->
                             <rect x="1" y="1" width="178" height="318" rx="16" stroke="#94A3B8" stroke-width="2" fill="#0a0a0a"/>
-                            <!-- Notch -->
                             <rect x="60" y="4" width="60" height="6" rx="3" fill="#1a1a1a"/>
-                            <!-- Status bar -->
+                            <!-- Header bar -->
                             <rect x="12" y="18" width="156" height="24" rx="4" fill="#1a1a1a"/>
+                            <rect x="20" y="26" width="40" height="8" rx="2" fill="#94A3B8"/>
+                            <rect x="130" y="26" width="30" height="8" rx="2" fill="#333"/>
                             <!-- Search bar -->
-                            <rect x="12" y="50" width="156" height="28" rx="6" fill="#1a1a1a" stroke="#64748B" stroke-width="1"/>
-                            <rect x="20" y="60" width="60" height="8" rx="2" fill="#333"/>
-                            <!-- Card 1 -->
-                            <rect x="12" y="90" width="156" height="60" rx="4" fill="#1a1a1a"/>
-                            <rect x="20" y="98" width="90" height="8" rx="2" fill="#64748B"/>
-                            <rect x="20" y="112" width="130" height="6" rx="2" fill="#333"/>
-                            <rect x="20" y="124" width="110" height="6" rx="2" fill="#333"/>
-                            <rect x="20" y="136" width="60" height="6" rx="2" fill="#222"/>
-                            <!-- Card 2 -->
-                            <rect x="12" y="158" width="156" height="60" rx="4" fill="#1a1a1a"/>
-                            <rect x="20" y="166" width="80" height="8" rx="2" fill="#64748B"/>
-                            <rect x="20" y="180" width="130" height="6" rx="2" fill="#333"/>
-                            <rect x="20" y="192" width="120" height="6" rx="2" fill="#333"/>
-                            <rect x="20" y="204" width="50" height="6" rx="2" fill="#222"/>
-                            <!-- Card 3 -->
-                            <rect x="12" y="226" width="156" height="60" rx="4" fill="#1a1a1a"/>
-                            <rect x="20" y="234" width="100" height="8" rx="2" fill="#64748B"/>
-                            <rect x="20" y="248" width="130" height="6" rx="2" fill="#333"/>
-                            <rect x="20" y="260" width="105" height="6" rx="2" fill="#333"/>
-                            <rect x="20" y="272" width="70" height="6" rx="2" fill="#222"/>
+                            <rect x="12" y="50" width="156" height="26" rx="6" fill="#1a1a1a" stroke="#64748B" stroke-width="1"/>
+                            <rect x="20" y="59" width="60" height="8" rx="2" fill="#333"/>
+                            <!-- Card 1 with avatar -->
+                            <rect x="12" y="86" width="156" height="62" rx="4" fill="#1a1a1a"/>
+                            <circle cx="28" cy="102" r="10" fill="#222" stroke="#64748B" stroke-width="0.5"/>
+                            <rect x="44" y="96" width="80" height="7" rx="2" fill="#94A3B8"/>
+                            <rect x="44" y="108" width="110" height="5" rx="2" fill="#333"/>
+                            <rect x="44" y="118" width="90" height="5" rx="2" fill="#333"/>
+                            <rect x="44" y="132" width="40" height="10" rx="3" fill="#64748B" opacity="0.3"/>
+                            <!-- Card 2 with avatar -->
+                            <rect x="12" y="156" width="156" height="62" rx="4" fill="#1a1a1a"/>
+                            <circle cx="28" cy="172" r="10" fill="#222" stroke="#64748B" stroke-width="0.5"/>
+                            <rect x="44" y="166" width="70" height="7" rx="2" fill="#94A3B8"/>
+                            <rect x="44" y="178" width="100" height="5" rx="2" fill="#333"/>
+                            <rect x="44" y="188" width="85" height="5" rx="2" fill="#333"/>
+                            <rect x="44" y="202" width="36" height="10" rx="3" fill="#64748B" opacity="0.3"/>
+                            <!-- Card 3 with avatar -->
+                            <rect x="12" y="226" width="156" height="62" rx="4" fill="#1a1a1a"/>
+                            <circle cx="28" cy="242" r="10" fill="#222" stroke="#64748B" stroke-width="0.5"/>
+                            <rect x="44" y="236" width="90" height="7" rx="2" fill="#94A3B8"/>
+                            <rect x="44" y="248" width="105" height="5" rx="2" fill="#333"/>
+                            <rect x="44" y="258" width="78" height="5" rx="2" fill="#333"/>
+                            <rect x="44" y="272" width="44" height="10" rx="3" fill="#64748B" opacity="0.3"/>
                             <!-- Bottom nav -->
                             <rect x="12" y="296" width="156" height="16" rx="4" fill="#1a1a1a"/>
-                            <rect x="28" y="300" width="20" height="8" rx="2" fill="#94A3B8"/>
-                            <rect x="62" y="300" width="20" height="8" rx="2" fill="#333"/>
-                            <rect x="96" y="300" width="20" height="8" rx="2" fill="#333"/>
-                            <rect x="130" y="300" width="20" height="8" rx="2" fill="#333"/>
+                            <rect x="24" y="300" width="20" height="8" rx="2" fill="#94A3B8"/>
+                            <rect x="56" y="300" width="20" height="8" rx="2" fill="#333"/>
+                            <rect x="88" y="300" width="20" height="8" rx="2" fill="#333"/>
+                            <rect x="120" y="300" width="20" height="8" rx="2" fill="#333"/>
                         </svg>
                         <span class="wireframe-label">Feed</span>
                     </div>
@@ -1252,104 +1270,175 @@ footer p {
                     <!-- Phone 2: Topics -->
                     <div class="wireframe-item">
                         <svg width="180" height="320" viewBox="0 0 180 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Phone outline -->
                             <rect x="1" y="1" width="178" height="318" rx="16" stroke="#94A3B8" stroke-width="2" fill="#0a0a0a"/>
-                            <!-- Notch -->
                             <rect x="60" y="4" width="60" height="6" rx="3" fill="#1a1a1a"/>
                             <!-- Header bar -->
                             <rect x="12" y="18" width="156" height="24" rx="4" fill="#1a1a1a"/>
                             <rect x="20" y="26" width="50" height="8" rx="2" fill="#94A3B8"/>
-                            <!-- Topic tiles: 2x3 grid -->
+                            <!-- 3x3 grid of topic tiles -->
                             <!-- Row 1 -->
-                            <rect x="12" y="54" width="74" height="64" rx="6" fill="#1a1a1a" stroke="#64748B" stroke-width="0.5" opacity="0.9"/>
-                            <rect x="20" y="62" width="40" height="6" rx="2" fill="#94A3B8"/>
-                            <rect x="20" y="74" width="56" height="5" rx="2" fill="#333"/>
-                            <rect x="20" y="84" width="48" height="5" rx="2" fill="#333"/>
-                            <rect x="20" y="100" width="24" height="10" rx="2" fill="#64748B" opacity="0.4"/>
-
-                            <rect x="94" y="54" width="74" height="64" rx="6" fill="#1a1a1a" stroke="#64748B" stroke-width="0.5" opacity="0.7"/>
-                            <rect x="102" y="62" width="36" height="6" rx="2" fill="#94A3B8"/>
-                            <rect x="102" y="74" width="56" height="5" rx="2" fill="#333"/>
-                            <rect x="102" y="84" width="44" height="5" rx="2" fill="#333"/>
-                            <rect x="102" y="100" width="24" height="10" rx="2" fill="#64748B" opacity="0.4"/>
-
+                            <rect x="12" y="54" width="48" height="48" rx="4" fill="#1a1a1a" stroke="#64748B" stroke-width="0.5" opacity="0.9"/>
+                            <rect x="18" y="88" width="36" height="5" rx="1" fill="#64748B" opacity="0.5"/>
+                            <rect x="66" y="54" width="48" height="48" rx="4" fill="#1a1a1a" stroke="#64748B" stroke-width="0.5" opacity="0.7"/>
+                            <rect x="72" y="88" width="36" height="5" rx="1" fill="#64748B" opacity="0.5"/>
+                            <rect x="120" y="54" width="48" height="48" rx="4" fill="#1a1a1a" stroke="#64748B" stroke-width="0.5" opacity="0.5"/>
+                            <rect x="126" y="88" width="36" height="5" rx="1" fill="#64748B" opacity="0.5"/>
                             <!-- Row 2 -->
-                            <rect x="12" y="126" width="74" height="64" rx="6" fill="#1a1a1a" stroke="#64748B" stroke-width="0.5" opacity="0.6"/>
-                            <rect x="20" y="134" width="44" height="6" rx="2" fill="#94A3B8"/>
-                            <rect x="20" y="146" width="56" height="5" rx="2" fill="#333"/>
-                            <rect x="20" y="156" width="50" height="5" rx="2" fill="#333"/>
-                            <rect x="20" y="172" width="24" height="10" rx="2" fill="#64748B" opacity="0.4"/>
-
-                            <rect x="94" y="126" width="74" height="64" rx="6" fill="#1a1a1a" stroke="#64748B" stroke-width="0.5" opacity="0.8"/>
-                            <rect x="102" y="134" width="48" height="6" rx="2" fill="#94A3B8"/>
-                            <rect x="102" y="146" width="56" height="5" rx="2" fill="#333"/>
-                            <rect x="102" y="156" width="40" height="5" rx="2" fill="#333"/>
-                            <rect x="102" y="172" width="24" height="10" rx="2" fill="#64748B" opacity="0.4"/>
-
+                            <rect x="12" y="110" width="48" height="48" rx="4" fill="#1a1a1a" stroke="#64748B" stroke-width="0.5" opacity="0.6"/>
+                            <rect x="18" y="144" width="36" height="5" rx="1" fill="#64748B" opacity="0.5"/>
+                            <rect x="66" y="110" width="48" height="48" rx="4" fill="#1a1a1a" stroke="#64748B" stroke-width="0.5" opacity="0.8"/>
+                            <rect x="72" y="144" width="36" height="5" rx="1" fill="#64748B" opacity="0.5"/>
+                            <rect x="120" y="110" width="48" height="48" rx="4" fill="#1a1a1a" stroke="#64748B" stroke-width="0.5" opacity="0.4"/>
+                            <rect x="126" y="144" width="36" height="5" rx="1" fill="#64748B" opacity="0.5"/>
                             <!-- Row 3 -->
-                            <rect x="12" y="198" width="74" height="64" rx="6" fill="#1a1a1a" stroke="#64748B" stroke-width="0.5" opacity="0.5"/>
-                            <rect x="20" y="206" width="38" height="6" rx="2" fill="#94A3B8"/>
-                            <rect x="20" y="218" width="56" height="5" rx="2" fill="#333"/>
-                            <rect x="20" y="228" width="46" height="5" rx="2" fill="#333"/>
-                            <rect x="20" y="244" width="24" height="10" rx="2" fill="#64748B" opacity="0.4"/>
-
-                            <rect x="94" y="198" width="74" height="64" rx="6" fill="#1a1a1a" stroke="#64748B" stroke-width="0.5" opacity="0.4"/>
-                            <rect x="102" y="206" width="42" height="6" rx="2" fill="#94A3B8"/>
-                            <rect x="102" y="218" width="56" height="5" rx="2" fill="#333"/>
-                            <rect x="102" y="228" width="52" height="5" rx="2" fill="#333"/>
-                            <rect x="102" y="244" width="24" height="10" rx="2" fill="#64748B" opacity="0.4"/>
-
+                            <rect x="12" y="166" width="48" height="48" rx="4" fill="#1a1a1a" stroke="#64748B" stroke-width="0.5" opacity="0.5"/>
+                            <rect x="18" y="200" width="36" height="5" rx="1" fill="#64748B" opacity="0.5"/>
+                            <rect x="66" y="166" width="48" height="48" rx="4" fill="#1a1a1a" stroke="#64748B" stroke-width="0.5" opacity="0.3"/>
+                            <rect x="72" y="200" width="36" height="5" rx="1" fill="#64748B" opacity="0.5"/>
+                            <rect x="120" y="166" width="48" height="48" rx="4" fill="#1a1a1a" stroke="#64748B" stroke-width="0.5" opacity="0.6"/>
+                            <rect x="126" y="200" width="36" height="5" rx="1" fill="#64748B" opacity="0.5"/>
                             <!-- Bottom nav -->
                             <rect x="12" y="296" width="156" height="16" rx="4" fill="#1a1a1a"/>
-                            <rect x="28" y="300" width="20" height="8" rx="2" fill="#333"/>
-                            <rect x="62" y="300" width="20" height="8" rx="2" fill="#94A3B8"/>
-                            <rect x="96" y="300" width="20" height="8" rx="2" fill="#333"/>
-                            <rect x="130" y="300" width="20" height="8" rx="2" fill="#333"/>
+                            <rect x="24" y="300" width="20" height="8" rx="2" fill="#333"/>
+                            <rect x="56" y="300" width="20" height="8" rx="2" fill="#94A3B8"/>
+                            <rect x="88" y="300" width="20" height="8" rx="2" fill="#333"/>
+                            <rect x="120" y="300" width="20" height="8" rx="2" fill="#333"/>
                         </svg>
                         <span class="wireframe-label">Topics</span>
                     </div>
 
-                    <!-- Phone 3: Profile -->
+                    <!-- Phone 3: Topic Detail -->
                     <div class="wireframe-item">
                         <svg width="180" height="320" viewBox="0 0 180 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Phone outline -->
                             <rect x="1" y="1" width="178" height="318" rx="16" stroke="#94A3B8" stroke-width="2" fill="#0a0a0a"/>
-                            <!-- Notch -->
+                            <rect x="60" y="4" width="60" height="6" rx="3" fill="#1a1a1a"/>
+                            <!-- Header with back arrow -->
+                            <rect x="12" y="18" width="156" height="24" rx="4" fill="#1a1a1a"/>
+                            <line x1="20" y1="30" x2="28" y2="26" stroke="#94A3B8" stroke-width="1.5"/>
+                            <line x1="20" y1="30" x2="28" y2="34" stroke="#94A3B8" stroke-width="1.5"/>
+                            <rect x="36" y="26" width="50" height="8" rx="2" fill="#94A3B8"/>
+                            <!-- Topic title area -->
+                            <rect x="20" y="56" width="120" height="12" rx="3" fill="#94A3B8"/>
+                            <rect x="20" y="76" width="140" height="6" rx="2" fill="#444"/>
+                            <!-- Paper card 1 -->
+                            <rect x="12" y="96" width="156" height="56" rx="4" fill="#1a1a1a"/>
+                            <rect x="20" y="104" width="100" height="7" rx="2" fill="#64748B"/>
+                            <rect x="20" y="116" width="70" height="5" rx="2" fill="#333"/>
+                            <rect x="20" y="128" width="40" height="5" rx="2" fill="#222"/>
+                            <rect x="110" y="128" width="20" height="5" rx="2" fill="#222"/>
+                            <rect x="134" y="128" width="20" height="5" rx="2" fill="#222"/>
+                            <!-- Paper card 2 -->
+                            <rect x="12" y="160" width="156" height="56" rx="4" fill="#1a1a1a"/>
+                            <rect x="20" y="168" width="110" height="7" rx="2" fill="#64748B"/>
+                            <rect x="20" y="180" width="80" height="5" rx="2" fill="#333"/>
+                            <rect x="20" y="192" width="36" height="5" rx="2" fill="#222"/>
+                            <rect x="110" y="192" width="20" height="5" rx="2" fill="#222"/>
+                            <rect x="134" y="192" width="20" height="5" rx="2" fill="#222"/>
+                            <!-- Paper card 3 -->
+                            <rect x="12" y="224" width="156" height="56" rx="4" fill="#1a1a1a"/>
+                            <rect x="20" y="232" width="90" height="7" rx="2" fill="#64748B"/>
+                            <rect x="20" y="244" width="60" height="5" rx="2" fill="#333"/>
+                            <rect x="20" y="256" width="44" height="5" rx="2" fill="#222"/>
+                            <rect x="110" y="256" width="20" height="5" rx="2" fill="#222"/>
+                            <rect x="134" y="256" width="20" height="5" rx="2" fill="#222"/>
+                            <!-- Bottom nav -->
+                            <rect x="12" y="296" width="156" height="16" rx="4" fill="#1a1a1a"/>
+                            <rect x="24" y="300" width="20" height="8" rx="2" fill="#333"/>
+                            <rect x="56" y="300" width="20" height="8" rx="2" fill="#94A3B8"/>
+                            <rect x="88" y="300" width="20" height="8" rx="2" fill="#333"/>
+                            <rect x="120" y="300" width="20" height="8" rx="2" fill="#333"/>
+                        </svg>
+                        <span class="wireframe-label">Topic Detail</span>
+                    </div>
+
+                    <!-- Phone 4: Daily Digest -->
+                    <div class="wireframe-item">
+                        <svg width="180" height="320" viewBox="0 0 180 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="1" y="1" width="178" height="318" rx="16" stroke="#94A3B8" stroke-width="2" fill="#0a0a0a"/>
+                            <rect x="60" y="4" width="60" height="6" rx="3" fill="#1a1a1a"/>
+                            <!-- Header -->
+                            <rect x="12" y="18" width="156" height="24" rx="4" fill="#1a1a1a"/>
+                            <rect x="20" y="26" width="70" height="8" rx="2" fill="#94A3B8"/>
+                            <!-- Date text -->
+                            <rect x="20" y="52" width="80" height="6" rx="2" fill="#444"/>
+                            <!-- Digest row 1 -->
+                            <rect x="12" y="70" width="156" height="46" rx="4" fill="#1a1a1a"/>
+                            <rect x="20" y="78" width="120" height="7" rx="2" fill="#64748B"/>
+                            <rect x="20" y="90" width="60" height="5" rx="2" fill="#333"/>
+                            <rect x="120" y="90" width="30" height="5" rx="2" fill="#333"/>
+                            <rect x="20" y="100" width="80" height="5" rx="2" fill="#222"/>
+                            <!-- Digest row 2 -->
+                            <rect x="12" y="124" width="156" height="46" rx="4" fill="#1a1a1a"/>
+                            <rect x="20" y="132" width="100" height="7" rx="2" fill="#64748B"/>
+                            <rect x="20" y="144" width="55" height="5" rx="2" fill="#333"/>
+                            <rect x="120" y="144" width="30" height="5" rx="2" fill="#333"/>
+                            <rect x="20" y="154" width="90" height="5" rx="2" fill="#222"/>
+                            <!-- Digest row 3 -->
+                            <rect x="12" y="178" width="156" height="46" rx="4" fill="#1a1a1a"/>
+                            <rect x="20" y="186" width="110" height="7" rx="2" fill="#64748B"/>
+                            <rect x="20" y="198" width="50" height="5" rx="2" fill="#333"/>
+                            <rect x="120" y="198" width="30" height="5" rx="2" fill="#333"/>
+                            <rect x="20" y="208" width="70" height="5" rx="2" fill="#222"/>
+                            <!-- Digest row 4 -->
+                            <rect x="12" y="232" width="156" height="46" rx="4" fill="#1a1a1a"/>
+                            <rect x="20" y="240" width="95" height="7" rx="2" fill="#64748B"/>
+                            <rect x="20" y="252" width="65" height="5" rx="2" fill="#333"/>
+                            <rect x="120" y="252" width="30" height="5" rx="2" fill="#333"/>
+                            <rect x="20" y="262" width="85" height="5" rx="2" fill="#222"/>
+                            <!-- Bottom nav -->
+                            <rect x="12" y="296" width="156" height="16" rx="4" fill="#1a1a1a"/>
+                            <rect x="24" y="300" width="20" height="8" rx="2" fill="#333"/>
+                            <rect x="56" y="300" width="20" height="8" rx="2" fill="#333"/>
+                            <rect x="88" y="300" width="20" height="8" rx="2" fill="#94A3B8"/>
+                            <rect x="120" y="300" width="20" height="8" rx="2" fill="#333"/>
+                        </svg>
+                        <span class="wireframe-label">Daily Digest</span>
+                    </div>
+
+                    <!-- Phone 5: Profile -->
+                    <div class="wireframe-item">
+                        <svg width="180" height="320" viewBox="0 0 180 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="1" y="1" width="178" height="318" rx="16" stroke="#94A3B8" stroke-width="2" fill="#0a0a0a"/>
                             <rect x="60" y="4" width="60" height="6" rx="3" fill="#1a1a1a"/>
                             <!-- Header bar -->
                             <rect x="12" y="18" width="156" height="24" rx="4" fill="#1a1a1a"/>
                             <rect x="20" y="26" width="40" height="8" rx="2" fill="#94A3B8"/>
-                            <!-- Avatar circle -->
-                            <circle cx="90" cy="80" r="28" fill="#1a1a1a" stroke="#64748B" stroke-width="1.5"/>
-                            <circle cx="90" cy="74" r="10" fill="#64748B" opacity="0.5"/>
-                            <ellipse cx="90" cy="92" rx="14" ry="8" fill="#64748B" opacity="0.3"/>
-                            <!-- Name bar -->
-                            <rect x="50" y="118" width="80" height="10" rx="3" fill="#94A3B8"/>
+                            <!-- Avatar circle (larger) -->
+                            <circle cx="90" cy="76" r="24" fill="#1a1a1a" stroke="#64748B" stroke-width="1.5"/>
+                            <circle cx="90" cy="71" r="8" fill="#64748B" opacity="0.5"/>
+                            <ellipse cx="90" cy="86" rx="11" ry="6" fill="#64748B" opacity="0.3"/>
+                            <!-- Name line -->
+                            <rect x="50" y="110" width="80" height="10" rx="3" fill="#94A3B8"/>
                             <!-- Subtitle -->
-                            <rect x="40" y="136" width="100" height="6" rx="2" fill="#333"/>
-                            <!-- Stats row -->
-                            <rect x="20" y="156" width="44" height="24" rx="4" fill="#1a1a1a"/>
-                            <rect x="68" y="156" width="44" height="24" rx="4" fill="#1a1a1a"/>
-                            <rect x="116" y="156" width="44" height="24" rx="4" fill="#1a1a1a"/>
-                            <rect x="28" y="164" width="28" height="6" rx="2" fill="#64748B" opacity="0.5"/>
-                            <rect x="76" y="164" width="28" height="6" rx="2" fill="#64748B" opacity="0.5"/>
-                            <rect x="124" y="164" width="28" height="6" rx="2" fill="#64748B" opacity="0.5"/>
-                            <!-- Content row 1 -->
-                            <rect x="12" y="196" width="156" height="52" rx="4" fill="#1a1a1a"/>
-                            <rect x="20" y="204" width="80" height="8" rx="2" fill="#64748B"/>
-                            <rect x="20" y="218" width="130" height="6" rx="2" fill="#333"/>
-                            <rect x="20" y="230" width="100" height="6" rx="2" fill="#333"/>
-                            <!-- Content row 2 -->
-                            <rect x="12" y="256" width="156" height="52" rx="4" fill="#1a1a1a"/>
-                            <rect x="20" y="264" width="70" height="8" rx="2" fill="#64748B"/>
-                            <rect x="20" y="278" width="130" height="6" rx="2" fill="#333"/>
-                            <rect x="20" y="290" width="90" height="6" rx="2" fill="#333"/>
+                            <rect x="45" y="126" width="90" height="6" rx="2" fill="#333"/>
+                            <!-- Stats row: 3 numbers -->
+                            <rect x="16" y="144" width="46" height="28" rx="4" fill="#1a1a1a"/>
+                            <rect x="24" y="150" width="20" height="8" rx="2" fill="#94A3B8" opacity="0.7"/>
+                            <rect x="24" y="162" width="30" height="5" rx="2" fill="#333"/>
+                            <rect x="67" y="144" width="46" height="28" rx="4" fill="#1a1a1a"/>
+                            <rect x="75" y="150" width="20" height="8" rx="2" fill="#94A3B8" opacity="0.7"/>
+                            <rect x="75" y="162" width="30" height="5" rx="2" fill="#333"/>
+                            <rect x="118" y="144" width="46" height="28" rx="4" fill="#1a1a1a"/>
+                            <rect x="126" y="150" width="20" height="8" rx="2" fill="#94A3B8" opacity="0.7"/>
+                            <rect x="126" y="162" width="30" height="5" rx="2" fill="#333"/>
+                            <!-- Collection card 1 -->
+                            <rect x="12" y="186" width="156" height="52" rx="4" fill="#1a1a1a"/>
+                            <rect x="20" y="194" width="80" height="7" rx="2" fill="#64748B"/>
+                            <rect x="20" y="206" width="130" height="5" rx="2" fill="#333"/>
+                            <rect x="20" y="216" width="100" height="5" rx="2" fill="#333"/>
+                            <rect x="20" y="226" width="50" height="5" rx="2" fill="#222"/>
+                            <!-- Collection card 2 -->
+                            <rect x="12" y="246" width="156" height="52" rx="4" fill="#1a1a1a"/>
+                            <rect x="20" y="254" width="70" height="7" rx="2" fill="#64748B"/>
+                            <rect x="20" y="266" width="120" height="5" rx="2" fill="#333"/>
+                            <rect x="20" y="276" width="90" height="5" rx="2" fill="#333"/>
+                            <rect x="20" y="286" width="40" height="5" rx="2" fill="#222"/>
                             <!-- Bottom nav -->
                             <rect x="12" y="296" width="156" height="16" rx="4" fill="#1a1a1a"/>
-                            <rect x="28" y="300" width="20" height="8" rx="2" fill="#333"/>
-                            <rect x="62" y="300" width="20" height="8" rx="2" fill="#333"/>
-                            <rect x="96" y="300" width="20" height="8" rx="2" fill="#333"/>
-                            <rect x="130" y="300" width="20" height="8" rx="2" fill="#94A3B8"/>
+                            <rect x="24" y="300" width="20" height="8" rx="2" fill="#333"/>
+                            <rect x="56" y="300" width="20" height="8" rx="2" fill="#333"/>
+                            <rect x="88" y="300" width="20" height="8" rx="2" fill="#333"/>
+                            <rect x="120" y="300" width="20" height="8" rx="2" fill="#94A3B8"/>
                         </svg>
                         <span class="wireframe-label">Profile</span>
                     </div>
